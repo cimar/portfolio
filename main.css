@@ -17,6 +17,15 @@ p {
 	line-height: 1.5em;
 }
 
+.table_header{
+  font-weight: bold;
+  padding: 0.35em;
+  /*display: table-cell;*/
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size:.8em;
+}
+
 .container{
 	padding: 10px;
 	margin: auto;
@@ -27,5 +36,53 @@ p {
 .foot {
 	text-align: right;
 
+}
+
+.tables container {
+  min-height: 360px;
+  margin-top: 3rem;
+}
+
+.chart__table table {
+  width: 100%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+.chart__table thead {
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.chart__table tbody {
+  font-size: .9em;
+}
+
+.chart__table tr {
+  border-bottom: 1px solid #ddd;
+  color: #222;
+}
+
+
+.chart__table zebra tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.chart__table th {
+  font-weight: bold;
+  padding: 0.35em;
+  /*display: table-cell;*/
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.chart__table td {
+  padding: 0.35em;
+  text-align: center;
+  /*display: table-cell;*/
 }
 
