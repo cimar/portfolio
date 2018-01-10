@@ -52,7 +52,7 @@ p {
 
 
 .chart__table thead {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #bbb;
   font-weight: bold;
   font-size: .8em;
 }
@@ -62,7 +62,7 @@ p {
 }
 
 .chart__table tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #bbb;
   color: #222;
 }
 
@@ -84,5 +84,17 @@ p {
   padding: 0.35em;
   text-align: center;
   /*display: table-cell;*/
+}
+
+.not-sort {
+  display: none;
+}
+
+.sort{
+}
+
+.highlight {
+  background-color: #fffaa0;
+  padding:.3em;
 }
 

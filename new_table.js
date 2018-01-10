@@ -4,6 +4,8 @@
 	var tableCols = ["title", "date", "words", "tags", "genre", "outlet"]
 	var chart = d3.select('.chart__table')
 	var ascending = false
+	var up_html = "<span class='not-sort'>⬆️</span>"
+	var down_html = "<span class='not-sort'>⬇</span>"
 
 	function link(title,url){
 		link ='<a href="'+url+'">'+title+'</a>'
@@ -19,7 +21,8 @@
 			words: +row.words,
 			tags: row.tags,
 			genre: row.genre,
-			outlet: row.outlet
+			outlet: row.outlet,
+			highlight: row.highlight
 		}
 		return target
 	}
@@ -43,26 +46,22 @@
 				.append('tr')
 
 		tableCols.map(function(k) {
+			k_html = ""
 			if (k === "words") {
-				tableHead.append('th')
-					.text("approx. # words")
+				k_html = "approx. # words" + up_html + down_html
 			} else if (k === "tags") {
-				tableHead.append('th').text("multimedia credit")
+				k_html = "multimedia credit" + up_html + down_html
 			} else if (k === "outlet") {
-				tableHead.append('th').text("outlet(s)")
+				k_html = "outlet(s)" + up_html + down_html
 			} else {
-				tableHead.append('th').text(k)
+				k_html = k + up_html + down_html
 			}
+			tableHead.append('th').html(k_html)
 		});
 
 
-// make ascending and descending sort function, 
-// have boolean so they can be swapped out for one another
-// if an already sorted column is selected
-
 		tableHead.selectAll("th")
-			.data(tableCols).on("click", function(k) {
-				console.log("onclick!")	
+			.data(tableCols).on("click", function(k) {	
 				tableRow.sort(function(a,b){
 					if (ascending === false) {
 						return (b[k] < a[k])
@@ -92,11 +91,12 @@
 							.text(d[k])
 					}
 				}
+				if (d["highlight"] === "Y") {
+					console.log("highlighting ",d)
+					self.attr("class", "highlight")
+				}
 			});
 		})
-
-
-
 
 	}
 	
