@@ -33,12 +33,18 @@ p {
 	max-width: 700px;
 }
 
+.container__table{
+	margin: auto;
+	width: 100%;
+	max-width: 900px;
+}
+
 .foot {
 	text-align: right;
 
 }
 
-.tables container {
+.tables {
   min-height: 360px;
   margin-top: 3rem;
 }
